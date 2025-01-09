@@ -7,7 +7,7 @@ dotenv.config();
 
 const app = express();
 
-//connecting to the database
+//connect to the database
 connectDB()
     .then(() => {
         console.log('Database connected successfully')
@@ -20,11 +20,11 @@ connectDB()
 app.use(cors());
 app.use(express.json());
 
-//testing route
+//test route
 app.get('/', (req, res) => {
     res.send('Server is running, and database connection is verified.');
 });
 
-// Start the server
+//start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
